@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * An instance of this class identifies a student and his grade.
- *
+ * <p>
  * For all purposes, two students are considered the same ("equals" criteria) if they have the same ID.
  */
 public class StudentGrade {
@@ -14,8 +14,8 @@ public class StudentGrade {
     private int grade;
 
     public StudentGrade(String id, String name, int grade) {
-        if(id == null || name == null) throw new NullPointerException("Id/name cannot be null.");
-        if(grade < 0 || grade > 20) throw new IllegalArgumentException("grade must be in [0,20].");
+        if (id == null || name == null) throw new NullPointerException("Id/name cannot be null.");
+        if (grade < 0 || grade > 20) throw new IllegalArgumentException("grade must be in [0,20].");
 
         this.id = id;
         this.name = name;
@@ -35,7 +35,7 @@ public class StudentGrade {
     }
 
     public int updateGrade(int grade) {
-        if(grade < 0 || grade > 20) throw new IllegalArgumentException("grade must be in [0,20].");
+        if (grade < 0 || grade > 20) throw new IllegalArgumentException("grade must be in [0,20].");
         int previous = this.grade;
         this.grade = grade;
         return previous;
@@ -56,10 +56,6 @@ public class StudentGrade {
 
     @Override
     public String toString() {
-        return "StudentGrade{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", grade=" + grade +
-                '}';
+        return "StudentGrade{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", grade=" + grade + '}';
     }
 }
